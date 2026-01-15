@@ -80,29 +80,36 @@ print("\033[0m")       #put colour back to normal
  #loop through until all letters are guessed
 
 while correct_letter_guesses != answer_test:
-    letter_guess = input("Enter a single letter quess or * to quit: ")[0]
-
-    if letter_guess.lower() == '*':
-        quit = letter_guess.lower()
-        break
-    else:       
-        each_guess += letter_guess.lower()
-
-    correct_letter_guesses = ""
-
-    for char in answer_test:
-
-        if char in each_guess:
-            correct_letter_guesses += char
-            #if correct guess, add to guessed correctly list
-            each_guess += letter_guess
-
+    guess_or_no = input("Would you like to make a guess yet? (y/n) ")
+    if guess_or_no == "y":
+        final_guess = input("What do you think it is? ")
+        if final_guess == phrases[random_clue]:
+            print("You got it! Good job!")
         else:
-                #print("Letter not found - guess again :-)")
-                if char.isspace():
-                    correct_letter_guesses += " "
-                else:
-                    correct_letter_guesses += "#"
+            print("Nope, try again...")
+        letter_guess = input("Enter a single letter quess or * to quit: ")[0]
+
+        if letter_guess.lower() == '*':
+            quit = letter_guess.lower()
+            break # player quits the game
+        else:       
+            each_guess += letter_guess.lower() # player guesses a letter
+
+        correct_letter_guesses = ""
+
+        for char in answer_test:
+
+            if char in each_guess:
+                correct_letter_guesses += char
+                #if correct guess, add to guessed correctly list
+                each_guess += letter_guess
+
+            else:
+                    #print("Letter not found - guess again :-)")
+                    if char.isspace():
+                        correct_letter_guesses += " "
+                    else:
+                        correct_letter_guesses += "#"
 
 #print("The clue is: ",clues[round], ":   ", correct_letter_guesses)
     #print()
