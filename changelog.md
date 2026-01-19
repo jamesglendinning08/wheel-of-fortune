@@ -28,3 +28,5 @@ Ver 2.2
 January 18
 -Screen clears
 -Changed scoring
+-Added external "high_score" file
+-Finished everything, formatted properly
