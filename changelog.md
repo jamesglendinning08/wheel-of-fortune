@@ -9,3 +9,12 @@ January 13 2026
 January 14
 -Player can now pick letters
 -Fixed capitalization on phrases
+
+January 16
+-Player can choose to solve the puzzle
+
+January 18
+-Player can now do multiple rounds
+-Player can now choose to quit
+-Player's score is now tallied and tracked
+-Some debugging
