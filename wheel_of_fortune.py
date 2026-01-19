@@ -114,7 +114,7 @@ def new_round():
                 quit_game()
                 break # player quits the game
             else:       
-                round_score -= 2
+                round_score -= 1
                 each_guess += letter_guess.lower() # player guesses a letter
                 letter_guesses.append(letter_guess)
 
@@ -136,7 +136,7 @@ def new_round():
 
     #print("The clue is: ",clues[round], ":   ", correct_letter_guesses)
         #print()
-        #screen_clear()
+        screen_clear()
         print()
         print(f"CLUE: {random_clue}")
         print("You have guessed:", letter_guesses)
